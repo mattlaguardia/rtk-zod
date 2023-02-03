@@ -25,7 +25,7 @@ class Model {
   id: string;
   type: string;
 
-  constructor({ id, type }: { id: string, type: string }) {
+  constructor({ id, type }: IModel) {
     this.id = id;
     this.type = type;
   }
