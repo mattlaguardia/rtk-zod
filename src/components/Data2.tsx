@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import api from '../api/api';
-import Source from '../models/source';
+import Source from '../models/source';;
 
 const { useGetSourceQuery } = api;
 
 const Data2 = () => {
+  let source;
+
   const { data, isLoading } = useGetSourceQuery(`${import.meta.env.VITE_SOURCE_ID}`);
 
   if (!isLoading && data) {
@@ -12,16 +14,16 @@ const Data2 = () => {
     console.log(data);
 
     console.log('Logs Modeled Source Data');
-    console.log(new Source(data));
+    source = new Source(data);
+    console.log(source);
   }
-
 
   return (
     <>
       { isLoading ?
         <>Loading...</> :
         <code>
-          { JSON.stringify(data) }
+          { JSON.stringify(source) }
         </code>
       }
     </>
