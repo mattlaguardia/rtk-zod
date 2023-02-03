@@ -13,7 +13,7 @@ interface ISourceCapabilities {
   video?: boolean;
 }
 
-interface ISource extends IModel {
+export interface ISource extends IModel {
   account_id: string;
   // ...
   date_created: number;
